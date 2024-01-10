@@ -8,7 +8,6 @@ import * as React from "react";
  * See: https://reactjs.org/docs/hooks-reference.html#uselayouteffect
  */
 const useIsomorphicLayoutEffect =
-  // @ts-expect-error
-  typeof window !== "undefined" ? React.useLayoutEffect : () => {};
+  () => {};
 
 export { useIsomorphicLayoutEffect };
