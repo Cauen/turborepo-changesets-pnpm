@@ -1,9 +1,8 @@
 name: Publish
 on:
-  workflow_run:
-    workflows: [CI]
-    branches: [main]
-    types: [completed]
+  push:
+    branches:
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -29,8 +28,11 @@ jobs:
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
-        # with:
-        #   publish: pnpm run release
+        with:
+          version: pnpm run version
+          commit: 'chore: update versions'
+          title: 'chore: update versions'
+          # publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
