@@ -1,5 +1,9 @@
 {
   "name": "@acme/portal-backend",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "lint": "echo linting",
+    "build": "echo build"
+  }
 }
