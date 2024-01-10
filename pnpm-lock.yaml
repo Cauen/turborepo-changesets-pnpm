@@ -24,13 +24,15 @@ importers:
         specifier: latest
         version: 1.11.3
 
-  apps/docs:
+  apps/docs-backend: {}
+
+  apps/docs-frontend:
     dependencies:
       '@acme/core':
-        specifier: workspace:*
+        specifier: '*'
         version: link:../../packages/acme-core
       '@acme/utils':
-        specifier: workspace:*
+        specifier: '*'
         version: link:../../packages/acme-utils
       next:
         specifier: ^14.0.4
@@ -43,10 +45,10 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:*
+        specifier: '*'
         version: link:../../packages/eslint-config
       '@acme/tsconfig':
-        specifier: workspace:*
+        specifier: '*'
         version: link:../../packages/acme-tsconfig
       '@types/node':
         specifier: ^20.10.6
@@ -60,6 +62,10 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+
+  apps/portal-backend: {}
+
+  apps/portal-frontend: {}
 
   packages/acme-core:
     devDependencies:
@@ -2123,6 +2129,7 @@ packages:
 
   /eslint-config-prettier@9.1.0(eslint@8.56.0):
     resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -3483,6 +3490,7 @@ packages:
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
     dev: false
 
   /natural-compare@1.4.0:
@@ -3492,6 +3500,7 @@ packages:
   /next@14.0.4(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-qbwypnM7327SadwFtxXnQdGiKpkuhaRLE2uq62/nRul9cj9KhQ5LhHmlziTNqUidZotw/Q1I9OjirBROdUJNgA==}
     engines: {node: '>=18.17.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       react: ^18.2.0
@@ -4478,6 +4487,7 @@ packages:
   /tsup@8.0.1(typescript@5.3.3):
     resolution: {integrity: sha512-hvW7gUSG96j53ZTSlT4j/KL0q1Q2l6TqGBFc6/mu/L46IoNWqLLUzLRLP1R8Q7xrJTmkDxxDoojV5uCVs1sVOg==}
     engines: {node: '>=18'}
+    hasBin: true
     peerDependencies:
       '@microsoft/api-extractor': ^7.36.0
       '@swc/core': ^1
@@ -4686,6 +4696,7 @@ packages:
 
   /update-browserslist-db@1.0.13(browserslist@4.22.1):
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
